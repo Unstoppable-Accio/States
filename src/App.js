@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import States1 from "./Components/States1";
+import States2 from "./Components/States2";
+import StateWithObjects from "./Components/StateWithObjects";
+import Form1 from "./Components/Form1";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+
+    return (
+        <div>
+            {/* <States1 /> */}
+            {/* <States2 /> */}
+            {/* <StateWithObjects /> */}
+            <Form1 />
+        </div>
+    )
 }
 
 export default App;
