@@ -6,6 +6,8 @@ import Form1 from "./Components/Form1";
 import Form2 from "./Components/Form2";
 import StatesWithArray from "./Components/StatesWithArray";
 import FormValidation from "./Components/FormValidation";
+import Lazy from "./Components/Lazy";
+import AysncUseState from "./Components/AsyncUseState";
 
 const App = () => {
 
@@ -18,7 +20,9 @@ const App = () => {
             {/* <Form1 /> */}
             {/* <Form2 /> */}
             {/* <StatesWithArray /> */}
-            <FormValidation />
+            {/* <FormValidation /> */}
+            {/* <Lazy /> */}
+            <AysncUseState />
         </div>
     )
 }

@@ -9,6 +9,8 @@ const FormValidation = () => {
     // const [password, setPass] = useState("");
     // const [confirmPass, setConfirmPass] = useState("");
     const [user, setUser] = useState({name:"", email:"", password:"", confirmPass:""})
+    const [error, setError] = useState()
+    const [success, setSuccess] = useState("")
 
       console.log(user)
       
@@ -24,46 +26,53 @@ const FormValidation = () => {
           e.preventDefault()
 
           if(!name || !email || !password || !confirmPass){
-                alert("Please fill all the fields")
+                 setError("All fields are required")
+                 setSuccess("")
                 return
           }
           if(name.trim().includes(" ")== false){
-              alert("Name should be atleast 2 words")
+                setError("Name should be atleast 2 words")
+                setSuccess("")
               return
           }
           if(email.includes("@")==false){
-              alert("Email should be valid")
+              setError("Email should be valid")
+                setSuccess("")
               return
           }
             if(password.length < 8){
-                alert("Password should be atleast 8 characters long")
+                 setError("Password should be atleast 8 characters long")
+                    setSuccess("")
                 return
             }
             if(password != confirmPass){
-                alert("Password and confirm password should match")
+                setError("Password and confirm password should match")
+                    setSuccess("")
                 return
             }
-            alert("Form submitted successfully")
+            setSuccess("Form submitted successfully")
+            setError("")
             
 
       }
 
-
-
-
-
-
-
-
-
     return(
         <div>
              {/* Hey dear Ai make signup form with name, email, password, confirm password and a submit button please*/}
+             {
+                error && <h3 style={{color:"red"}}>{error}</h3>
+             }
+
+             {
+                    success && <h3 style={{color:"green"}}>{success}</h3>
+             }
+
+
              <form onSubmit={submitForm}>
                     <input type="text" placeholder="Enter your name" 
                       onChange={e => setUser({...user, name: e.target.value})}
                     />
-
+                  
                     <input type="email" placeholder="Enter your email" 
                       onChange={e => setUser({...user, email: e.target.value})}
                     />
@@ -78,6 +87,10 @@ const FormValidation = () => {
                     />
 
                     <button type="submit">Submit</button>
+
+                    
+                    
+                    
              </form>
 
 
@@ -87,3 +100,24 @@ const FormValidation = () => {
 }
 
 export default FormValidation;
+
+
+
+
+
+
+// let user = {name: "Abhi", age: 20} 
+
+// user.name 
+// user.age 
+
+// // let t1 = user.name 
+// // let t2 = user.age
+
+// let {name:t1, age:t2} = user  // destructuring
+
+
+
+// const [x, setX] = useState({a:10,b:20});
+
+// x.a = 100
